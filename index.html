@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Watch More</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src= "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.5.0.js"></script>
+      <script src= "https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js"></script>
+      <script src= "scripts/watchmore.js"></script>
+    
+
+
+     
+   </head>
+   <body>
+      <div class="container">
+         <span data-bind="text:WatchMoreModel.TestingText"></span>
+
+         <!--Channel Section-->
+         <div class="row">
+                <!-- ko foreach:WatchMoreModel.Channels-->
+                  <div class="card col-xs-6" data-bind="click:WatchMoreModel.ChannelClick" style="cursor:pointer;">
+                     <img data-bind="attr:{'src':Img,'alt':HoverText}" class="card-img-top">
+                     <div class="card-body">
+                        <a  data-bind="attr:{'href':Link}">
+                           <div data-bind="text:Label"> </div>
+                        </a>
+                     </div>
+                  </div>    
+                <!-- /ko -->
+         </div>
+
+      </div>
+   </body>
+</html>
